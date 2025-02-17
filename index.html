@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advait Nair - Mechanical Engineering Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --primary-color: #31363F;    /* New dark background */
+            --secondary-color: #FF8C94;  /* Soft light red */
+            --accent-color: #FF6B6B;     /* Light red */
+            --light-color: #FFFFFF;      /* White */
+            --dark-color: #2D3436;       /* Dark gray */
+            --text-primary: #FFFFFF;     /* White text for better contrast */
+            --text-secondary: #E0E0E0;   /* Light gray for secondary text */
+            --bg-gradient-start: #31363F; /* Dark background start */
+            --bg-gradient-end: #393E46;   /* Slightly lighter dark end */
+        }
+
+        /* Gradient Animations */
+        .gradient-glow {
+            background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
+            background-size: 200% 200%;
+            animation: gradient 15s ease infinite;
+            opacity: 0.9;
+        }
+
+        .text-gradient {
+            background: linear-gradient(45deg, #FFFFFF, var(--accent-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 200% 200%;
+            animation: gradient 8s ease infinite;
+        }
+
+        .glow {
+            box-shadow: 0 0 15px rgba(255, 73, 73, 0.3);
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating Animation */
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Add a new class for section headings */
+        .section-heading {
+            color: #FFFFFF;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Add to your existing styles */
+        .modal-content {
+            transition: all 0.3s ease-out;
+        }
+
+        .modal-content.opacity-100 {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .modal-content.opacity-0 {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+    </style>
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: 'var(--primary-color)',
+                        secondary: 'var(--secondary-color)',
+                        accent: 'var(--accent-color)',
+                        light: 'var(--light-color)',
+                        dark: 'var(--dark-color)',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-in forwards',
+                        'slide-up': 'slideUp 0.5s ease-out forwards',
+                    },
+                    backdropBlur: {
+                        'xs': '2px',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#31363F] text-[var(--text-primary)]">
+    <!-- Header with glass morphism -->
+    <header id="header" class="fixed w-full top-0 z-50 transition-all duration-300 backdrop-blur-sm bg-[#31363F]/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="text-white">
+                    <h1 class="text-2xl font-bold text-gradient">
+                        Advait<span class="text-accent">Nair</span>
+                    </h1>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button id="hamburger" class="md:hidden text-white text-2xl hover:text-accent transition-colors">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <!-- Navigation -->
+                <nav id="nav-menu" class="hidden md:block">
+                    <ul class="flex flex-col md:flex-row md:space-x-8 space-y-4 md:space-y-0">
+                        <li><a href="#hero" class="text-white hover:text-accent transition-all hover:scale-110 inline-block font-medium">Home</a></li>
+                        <li><a href="#about" class="text-white hover:text-accent transition-all hover:scale-110 inline-block font-medium">About</a></li>
+                        <li><a href="#experience" class="text-white hover:text-accent transition-all hover:scale-110 inline-block font-medium">Experience</a></li>
+                        <li><a href="#projects" class="text-white hover:text-accent transition-all hover:scale-110 inline-block font-medium">Projects</a></li>
+                        <li><a href="#skills" class="text-white hover:text-accent transition-all hover:scale-110 inline-block font-medium">Skills</a></li>
+                        <li><a href="#awards" class="text-white hover:text-accent transition-all hover:scale-110 inline-block font-medium">Awards</a></li>
+                        <li><a href="#contact" class="text-white hover:text-accent transition-all hover:scale-110 inline-block font-medium">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Section with particle effect -->
+        <section id="hero" class="min-h-screen flex items-center relative overflow-hidden bg-gradient-to-b from-[var(--bg-gradient-start)] to-[var(--bg-gradient-end)]">
+            <div id="particles" class="absolute inset-0"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <div class="floating">
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6 text-gradient">
+                        Advait Nair
+                    </h1>
+                    <h2 class="text-xl md:text-3xl mb-8 text-white font-medium">
+                        Aspiring Mechanical Engineer
+                    </h2>
+                </div>
+                <div class="space-x-4 mt-12">
+                    <a 
+                        href="https://drive.google.com/file/d/12c1ieEkwLzRBG7O9bLtod9OJZN-uwutX/view?usp=sharing" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        class="btn gradient-glow px-8 py-4 rounded-full inline-block transition-all hover:scale-105 glow"
+                    >
+                        <i class="fas fa-file-pdf mr-2"></i>View Resume
+                    </a>
+                    <a href="#contact" class="btn border-2 border-white/50 hover:border-accent px-8 py-4 rounded-full inline-block transition-all hover:scale-105 backdrop-blur-sm">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="min-h-screen py-20 relative">
+            <div class="absolute inset-0 bg-gradient-to-b from-primary/50 to-dark/50 z-0"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
+                    About Me
+                </h2>
+                
+                <div class="flex flex-col items-center max-w-4xl mx-auto">
+                    <!-- Image Container -->
+                    <div class="relative group mb-12">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-accent to-secondary rounded-full blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
+                        <div class="relative w-[300px] h-[300px] mx-auto overflow-hidden rounded-full border-4 border-accent/20">
+                            <img 
+                                src="./headshot.png" 
+                                alt="Advait Nair" 
+                                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Text Content -->
+                    <div class="text-center space-y-6">
+                        <h3 class="text-2xl font-semibold text-white">
+                            Hi I'm <span class="text-accent font-bold">Advait</span>!
+                        </h3>
+                        <p class="text-white text-lg max-w-2xl mx-auto">
+                            I'm a junior at Seven Lakes High School who enjoys playing soccer, eating ramen, and tinkering with CAD. In my free time, I like to work on art pieces. I am interested in all things aerospace, from rocketry to black holes. I am currently learning how to use computers to simulate rocket fuel tank performance based on material properties.
+                        </p>
+
+                        <!-- Notable Courses Section -->
+                        <div class="mt-12">
+                            <h4 class="text-xl font-semibold text-white mb-6">Notable Courses</h4>
+                            <div class="flex flex-wrap justify-center items-center gap-6">
+                                <!-- AP Physics 1 -->
+                                <div class="group relative">
+                                    <div class="w-auto px-4 py-2 border-2 border-accent/50 rounded-full transition-all duration-300 group-hover:border-accent cursor-pointer">
+                                        <div class="flex items-center space-x-2">
+                                            <div class="w-2 h-2 rounded-full bg-accent"></div>
+                                            <span class="text-white group-hover:text-accent transition-colors duration-300">AP Physics 1</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- AP Statistics -->
+                                <div class="group relative">
+                                    <div class="w-auto px-4 py-2 border-2 border-accent/50 rounded-full transition-all duration-300 group-hover:border-accent cursor-pointer">
+                                        <div class="flex items-center space-x-2">
+                                            <div class="w-2 h-2 rounded-full bg-accent"></div>
+                                            <span class="text-white group-hover:text-accent transition-colors duration-300">AP Statistics</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- AP Precalculus -->
+                                <div class="group relative">
+                                    <div class="w-auto px-4 py-2 border-2 border-accent/50 rounded-full transition-all duration-300 group-hover:border-accent cursor-pointer">
+                                        <div class="flex items-center space-x-2">
+                                            <div class="w-2 h-2 rounded-full bg-accent"></div>
+                                            <span class="text-white group-hover:text-accent transition-colors duration-300">AP Precalculus</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- AP Computer Science A -->
+                                <div class="group relative">
+                                    <div class="w-auto px-4 py-2 border-2 border-accent/50 rounded-full transition-all duration-300 group-hover:border-accent cursor-pointer">
+                                        <div class="flex items-center space-x-2">
+                                            <div class="w-2 h-2 rounded-full bg-accent"></div>
+                                            <span class="text-white group-hover:text-accent transition-colors duration-300">AP Computer Science A</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- AP Computer Science Principles -->
+                                <div class="group relative">
+                                    <div class="w-auto px-4 py-2 border-2 border-accent/50 rounded-full transition-all duration-300 group-hover:border-accent cursor-pointer">
+                                        <div class="flex items-center space-x-2">
+                                            <div class="w-2 h-2 rounded-full bg-accent"></div>
+                                            <span class="text-white group-hover:text-accent transition-colors duration-300">AP Computer Science Principles</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- AP Seminar -->
+                                <div class="group relative">
+                                    <div class="w-auto px-4 py-2 border-2 border-accent/50 rounded-full transition-all duration-300 group-hover:border-accent cursor-pointer">
+                                        <div class="flex items-center space-x-2">
+                                            <div class="w-2 h-2 rounded-full bg-accent"></div>
+                                            <span class="text-white group-hover:text-accent transition-colors duration-300">AP Seminar</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="min-h-screen py-20 relative">
+            <div class="absolute inset-0 bg-gradient-to-b from-dark/50 to-primary/50 z-0"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 section-heading">
+                    Experience & Activities
+                </h2>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+                    <!-- Shoreline.ai Card -->
+                    <div class="group relative cursor-pointer experience-card" data-modal="shoreline" data-animate>
+                        <div class="absolute -inset-0.5 bg-gradient-to-r from-accent to-secondary rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000"></div>
+                        <div class="relative bg-primary/80 p-8 rounded-lg backdrop-blur-sm hover:transform hover:scale-105 transition-all">
+                            <div class="text-accent text-4xl mb-4">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-2">Shoreline.ai Intern</h3>
+                            <p class="text-light/80 mb-4">May 2024 - Present</p>
+                            <p class="text-light/90">Click to learn more</p>
+                        </div>
+                    </div>
+
+                    <!-- TSA Card -->
+                    <div class="group relative cursor-pointer experience-card" data-modal="tsa" data-animate>
+                        <div class="absolute -inset-0.5 bg-gradient-to-r from-accent to-secondary rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000"></div>
+                        <div class="relative bg-primary/80 p-8 rounded-lg backdrop-blur-sm hover:transform hover:scale-105 transition-all">
+                            <div class="text-accent text-4xl mb-4">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-2">Technology Student Association</h3>
+                            <p class="text-light/80 mb-4">2021 - Present</p>
+                            <p class="text-light/90">Click to learn more</p>
+                        </div>
+                    </div>
+
+                    <!-- Speech and Debate Card -->
+                    <div class="group relative cursor-pointer experience-card" data-modal="debate" data-animate>
+                        <div class="absolute -inset-0.5 bg-gradient-to-r from-accent to-secondary rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000"></div>
+                        <div class="relative bg-primary/80 p-8 rounded-lg backdrop-blur-sm hover:transform hover:scale-105 transition-all">
+                            <div class="text-accent text-4xl mb-4">
+                                <i class="fas fa-microphone-alt"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-2">Speech and Debate Team</h3>
+                            <p class="text-light/80 mb-4">2021 - Present</p>
+                            <p class="text-light/90">Click to learn more</p>
+                        </div>
+                    </div>
+
+                    <!-- CAD Club Card -->
+                    <div class="group relative cursor-pointer experience-card" data-modal="cad" data-animate>
+                        <div class="absolute -inset-0.5 bg-gradient-to-r from-accent to-secondary rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000"></div>
+                        <div class="relative bg-primary/80 p-8 rounded-lg backdrop-blur-sm hover:transform hover:scale-105 transition-all">
+                            <div class="text-accent text-4xl mb-4">
+                                <i class="fas fa-drafting-compass"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-2">CAD Club</h3>
+                            <p class="text-light/80 mb-4">August 2024 - Present</p>
+                            <p class="text-light/90">Click to learn more</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shoreline.ai Modal -->
+            <div id="modal-shoreline" class="fixed inset-0 bg-black/50 z-50 hidden backdrop-blur-sm">
+                <div class="min-h-screen flex items-center justify-center p-4">
+                    <div class="bg-primary/95 p-8 rounded-lg max-w-2xl w-full relative">
+                        <button class="absolute top-4 right-4 text-white hover:text-accent">
+                            <i class="fas fa-times text-2xl"></i>
+                        </button>
+                        <h3 class="text-3xl font-bold text-white mb-4">Shoreline.ai Intern</h3>
+                        <p class="text-accent mb-4">May 2024 - Present</p>
+                        <p class="text-light/90 mb-4">I design 3D models of products for partners that operate in the Permian Basin.</p>
+                        <ul class="space-y-3 text-light/90">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-accent mt-1.5 mr-3"></i>
+                                <span>Designed models using CAD softwares such as Autodesk Inventor and Fusion360</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-accent mt-1.5 mr-3"></i>
+                                <span>Researched product usage locations to assess and decide on the quality of parts</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-accent mt-1.5 mr-3"></i>
+                                <span>Created "proof of concept" presentations that explained the ratio</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TSA Modal -->
+            <div id="modal-tsa" class="fixed inset-0 bg-black/50 z-50 hidden backdrop-blur-sm">
+                <div class="min-h-screen flex items-center justify-center p-4">
+                    <div class="bg-primary/95 p-8 rounded-lg max-w-2xl w-full relative">
+                        <button class="absolute top-4 right-4 text-white hover:text-accent">
+                            <i class="fas fa-times text-2xl"></i>
+                        </button>
+                        <h3 class="text-3xl font-bold text-white mb-4">Technology Student Association</h3>
+                        <p class="text-accent mb-4">2021 - Present</p>
+                        <ul class="space-y-3 text-light/90">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-accent mt-1.5 mr-3"></i>
+                                <span>Implemented chapter-wide budget for travel and tournament costs, handling up to $13,000</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-accent mt-1.5 mr-3"></i>
+                                <span>Coordinated high school & middle school finances alongside administrators and parents, summing up to $3000 in transactions</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-accent mt-1.5 mr-3"></i>
+                                <span>Arranged community fundraisers and socials alongside the Media Chair, increasing turnout by 30+ members</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-accent mt-1.5 mr-3"></i>
+                                <span>Participated in several events from engineering to debate, reaching the national competition & having placements in the state of Texas and the entire nation</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speech and Debate Modal -->
+            <div id="modal-debate" class="fixed inset-0 bg-black/50 z-50 hidden backdrop-blur-sm">
+                <div class="min-h-screen flex items-center justify-center p-4">
+                    <div class="bg-primary/95 p-8 rounded-lg max-w-2xl w-full relative">
+                        <button class="absolute top-4 right-4 text-white hover:text-accent">
+                            <i class="fas fa-times text-2xl"></i>
+                        </button>
+                        <h3 class="text-3xl font-bold text-white mb-4">Speech and Debate Team</h3>
+                        <p class="text-accent mb-4">Novice Member (9th), Varsity Member (10th-Present)</p>
+                        <ul class="space-y-3 text-light/90">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-accent mt-1.5 mr-3"></i>
+                                <span>3-year Varsity member</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-accent mt-1.5 mr-3"></i>
+                                <span>State qualified in Extemporaneous speaking and Congressional Debate by winning several local tournaments</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-accent mt-1.5 mr-3"></i>
+                                <span>Assisted in middle school practices, emphasizing the fundamentals of persuasion and argumentation, accumulating 36+ hrs teaching from January 2024 to December 2024</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-accent mt-1.5 mr-3"></i>
+                                <span>36th in the State of Texas in Impromptu Speaking (based on TFA State Tournament Final Rankings)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-accent mt-1.5 mr-3"></i>
+                                <span>62nd in the State of Texas in Congressional Debate (based on TFA State Tournament Final Rankings)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CAD Club Modal -->
+            <div id="modal-cad" class="fixed inset-0 bg-black/50 z-50 hidden backdrop-blur-sm">
+                <div class="min-h-screen flex items-center justify-center p-4">
+                    <div class="bg-primary/95 p-8 rounded-lg max-w-2xl w-full relative">
+                        <button class="absolute top-4 right-4 text-white hover:text-accent">
+                            <i class="fas fa-times text-2xl"></i>
+                        </button>
+                        <h3 class="text-3xl font-bold text-white mb-4">CAD Club</h3>
+                        <p class="text-accent mb-4">August 2024 - Present</p>
+                        <ul class="space-y-3 text-light/90">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-accent mt-1.5 mr-3"></i>
+                                <span>Organized and led meetings with 25+ members</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-accent mt-1.5 mr-3"></i>
+                                <span>Created a curriculum for new students to get their CAD certification before the end of the school year</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-accent mt-1.5 mr-3"></i>
+                                <span>Taught the fundamentals of CAD, such as 2d sketching, assemblies, and in AutoDesk Inventor & Onshape through group lessons</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-accent mt-1.5 mr-3"></i>
+                                <span>Gave individual assistance to students who struggled to understand concepts</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-accent mt-1.5 mr-3"></i>
+                                <span>Connect experienced students with prestigious competitions to utilize their CAD skills properly</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="min-h-screen py-20 relative">
+            <div class="absolute inset-0 bg-gradient-to-b from-primary/50 to-dark/50 z-0"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 section-heading">
+                    Projects
+                </h2>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 (Biotech) -->
+                    <div class="group relative" data-animate>
+                        <div class="absolute -inset-0.5 bg-gradient-to-r from-accent to-secondary rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000"></div>
+                        <div class="relative bg-primary/80 p-6 rounded-lg backdrop-blur-sm">
+                            <h3 class="text-2xl font-bold mb-2 text-gradient">Biotechnology Design</h3>
+                            <p class="text-light/80 mb-4">Created unique designs capturing the microplastic decomposition process using home supplies, including a 3D interactive model.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-accent/20 rounded-full text-sm">CAD</span>
+                                <span class="px-3 py-1 bg-accent/20 rounded-full text-sm">Biotechnology</span>
+                                <span class="px-3 py-1 bg-accent/20 rounded-full text-sm">3D Modeling</span>
+                            </div>
+                            <p class="text-white font-semibold mb-4">2nd in Texas, 1st in Gulf Coast Region, National Qualifier</p>
+                            <a 
+                                href="https://drive.google.com/file/d/1UolUn5LhRAT9Koez4o8sJu1JEYc0J319/view?usp=sharing"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="inline-block w-full text-center py-2 bg-accent text-white rounded-lg hover:bg-secondary transition-colors duration-300"
+                            >
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 (HSR) -->
+                    <div class="group relative" data-animate>
+                        <div class="absolute -inset-0.5 bg-gradient-to-r from-accent to-secondary rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000"></div>
+                        <div class="relative bg-primary/80 p-6 rounded-lg backdrop-blur-sm">
+                            <h3 class="text-2xl font-bold mb-2 text-gradient">Speeding to the Future: High Speed Rail Analysis</h3>
+                            <p class="text-light/80 mb-4">This research report explores the historical development and social impacts of high-speed rail (HSR) in America, examining equity issues and proposing policy reforms based on international models.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-accent/20 rounded-full text-sm">Research</span>
+                                <span class="px-3 py-1 bg-accent/20 rounded-full text-sm">Policy Analysis</span>
+                                <span class="px-3 py-1 bg-accent/20 rounded-full text-sm">Social Impact</span>
+                                <span class="px-3 py-1 bg-accent/20 rounded-full text-sm">Transportation</span>
+                            </div>
+                            <p class="text-white font-semibold mb-4">AP Seminar Research Project</p>
+                            <a 
+                                href="https://drive.google.com/file/d/1vaxqUwKWPupu3YX0-c4CvHC29qPM7Rx6/view?usp=sharing"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="inline-block w-full text-center py-2 bg-accent text-white rounded-lg hover:bg-secondary transition-colors duration-300"
+                            >
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 (Climate Change) -->
+                    <div class="group relative" data-animate>
+                        <div class="absolute -inset-0.5 bg-gradient-to-r from-accent to-secondary rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000"></div>
+                        <div class="relative bg-primary/80 p-6 rounded-lg backdrop-blur-sm">
+                            <h3 class="text-2xl font-bold mb-2 text-gradient">The Heat of Corporations: Climate Change Analysis</h3>
+                            <p class="text-light/80 mb-4">This research report examines the historical role of large corporations in climate change, analyzing corporate responsibility and environmental policy implications.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-accent/20 rounded-full text-sm">Research</span>
+                                <span class="px-3 py-1 bg-accent/20 rounded-full text-sm">Environmental Studies</span>
+                                <span class="px-3 py-1 bg-accent/20 rounded-full text-sm">Policy Analysis</span>
+                                <span class="px-3 py-1 bg-accent/20 rounded-full text-sm">Corporate Impact</span>
+                            </div>
+                            <p class="text-white font-semibold mb-4">AP Seminar Research Project</p>
+                            <a 
+                                href="https://drive.google.com/file/d/161_3nQqEyYmJ4QUPeI6auhxPq7Y9K7Go/view?usp=sharing"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="inline-block w-full text-center py-2 bg-accent text-white rounded-lg hover:bg-secondary transition-colors duration-300"
+                            >
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="min-h-screen py-20 relative">
+            <div class="absolute inset-0 bg-gradient-to-b from-dark/50 to-primary/50 z-0"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 section-heading">
+                    Skills & Expertise
+                </h2>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Technical Skills -->
+                    <div class="group relative" data-animate>
+                        <div class="absolute -inset-0.5 bg-gradient-to-r from-accent to-secondary rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000"></div>
+                        <div class="relative bg-primary/80 p-6 rounded-lg backdrop-blur-sm">
+                            <h3 class="text-2xl font-bold mb-6 text-gradient">Technical Skills</h3>
+                            <ul class="space-y-3 text-light/90">
+                                <li class="flex items-center">
+                                    <i class="fas fa-star text-accent text-xs mr-3"></i>
+                                    AutoDesk Inventor
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-star text-accent text-xs mr-3"></i>
+                                    CAD Design
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-star text-accent text-xs mr-3"></i>
+                                    3D Modeling
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-star text-accent text-xs mr-3"></i>
+                                    Arduino
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Software Skills -->
+                    <div class="group relative" data-animate>
+                        <div class="absolute -inset-0.5 bg-gradient-to-r from-accent to-secondary rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000"></div>
+                        <div class="relative bg-primary/80 p-6 rounded-lg backdrop-blur-sm">
+                            <h3 class="text-2xl font-bold mb-6 text-gradient">Software Skills</h3>
+                            <ul class="space-y-3 text-light/90">
+                                <li class="flex items-center">
+                                    <i class="fas fa-star text-accent text-xs mr-3"></i>
+                                    Microsoft Office
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-star text-accent text-xs mr-3"></i>
+                                    Adobe Creative Suite
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-star text-accent text-xs mr-3"></i>
+                                    Project Management
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-star text-accent text-xs mr-3"></i>
+                                    C+ (Arduino)
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Soft Skills -->
+                    <div class="group relative" data-animate>
+                        <div class="absolute -inset-0.5 bg-gradient-to-r from-accent to-secondary rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000"></div>
+                        <div class="relative bg-primary/80 p-6 rounded-lg backdrop-blur-sm">
+                            <h3 class="text-2xl font-bold mb-6 text-gradient">Soft Skills</h3>
+                            <ul class="space-y-3 text-light/90">
+                                <li class="flex items-center">
+                                    <i class="fas fa-star text-accent text-xs mr-3"></i>
+                                    Leadership
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-star text-accent text-xs mr-3"></i>
+                                    Public Speaking
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-star text-accent text-xs mr-3"></i>
+                                    Team Collaboration
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards Section -->
+        <section id="awards" class="min-h-screen py-20 relative">
+            <div class="absolute inset-0 bg-gradient-to-b from-primary/50 to-dark/50 z-0"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 section-heading">
+                    Honors & Awards
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- TSA Achievements -->
+                    <div class="group relative transform hover:-translate-y-2 transition-all duration-300" data-animate>
+                        <div class="absolute -inset-0.5 bg-gradient-to-r from-accent to-secondary rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000"></div>
+                        <div class="relative bg-primary/80 p-8 rounded-lg backdrop-blur-sm">
+                            <div class="text-accent text-4xl mb-4">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4 text-white">Technology Student Association</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="text-lg font-semibold text-accent mb-2">Debating Technological Issues</h4>
+                                    <p class="text-light/90">3rd place in the National TSA Conference (2024)</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-accent mb-2">Biotechnology Design</h4>
+                                    <ul class="text-light/90 space-y-1">
+                                        <li>National Qualifier for National TSA Conference (2024)</li>
+                                        <li>2nd in the Texas TSA Conference (2024)</li>
+                                        <li>1st in the Gulf Coast Region Competition (2024)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Speech and Debate Achievements -->
+                    <div class="group relative transform hover:-translate-y-2 transition-all duration-300" data-animate>
+                        <div class="absolute -inset-0.5 bg-gradient-to-r from-accent to-secondary rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000"></div>
+                        <div class="relative bg-primary/80 p-8 rounded-lg backdrop-blur-sm">
+                            <div class="text-accent text-4xl mb-4">
+                                <i class="fas fa-microphone-alt"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4 text-white">Speech and Debate</h3>
+                            <ul class="text-light/90 space-y-2">
+                                <li>Congressional Debate Semi-finalist at Long Horn Classic (Top 36 out of 137 people)</li>
+                                <li>Congressional Debate Finalist at Churchill Classic (Top 12 out of 76 entries)</li>
+                                <li>Quarter Finalist Texas State Tournament (2024) for Impromptu (Top 36 out of 96 Entries)</li>
+                                <li>2x qualifier for Texas State Tournament for Congressional Debate</li>
+                                <li>Qualifier for Texas State Tournament for International Extemp (2024)</li>
+                                <li>UIL State Qualifier & 9th in UIL Regions for Congressional Debate</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Athletic Achievements -->
+                    <div class="group relative transform hover:-translate-y-2 transition-all duration-300" data-animate>
+                        <div class="absolute -inset-0.5 bg-gradient-to-r from-accent to-secondary rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000"></div>
+                        <div class="relative bg-primary/80 p-8 rounded-lg backdrop-blur-sm">
+                            <div class="text-accent text-4xl mb-4">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4 text-white">Athletic Achievements</h3>
+                            <ul class="text-light/90 space-y-2">
+                                <li>9th grade Tennis Districts Mixed Doubles Runner-Up</li>
+                                <li>2nd place in 6A-District for Mixed Doubles (2023)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Academic Achievements -->
+                    <div class="group relative transform hover:-translate-y-2 transition-all duration-300" data-animate>
+                        <div class="absolute -inset-0.5 bg-gradient-to-r from-accent to-secondary rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000"></div>
+                        <div class="relative bg-primary/80 p-8 rounded-lg backdrop-blur-sm">
+                            <div class="text-accent text-4xl mb-4">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4 text-white">Academic Achievements</h3>
+                            <ul class="text-light/90 space-y-2">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-accent mr-2"></i>
+                                    5 on AP Computer Science Principles Exam
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-accent mr-2"></i>
+                                    5 on AP Computer Science A Exam
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-accent mr-2"></i>
+                                    Gifted and Talented Program Member for 8 years
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section - Add this before closing </main> -->
+        <section id="contact" class="min-h-screen py-20 relative">
+            <div class="absolute inset-0 bg-gradient-to-b from-dark/50 to-primary/50 z-0"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 section-heading">
+                    Get In Touch
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Contact Info -->
+                    <div class="space-y-8" data-animate>
+                        <div class="group">
+                            <h3 class="text-2xl font-bold mb-6 text-gradient">Contact Information</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center space-x-4 text-light/90 group-hover:text-accent transition-colors">
+                                    <i class="fas fa-envelope text-2xl text-accent"></i>
+                                    <a href="mailto:advaitrn1002@gmail.com" class="hover:text-accent transition-colors">
+                                        advaitrn1002@gmail.com
+                                    </a>
+                                </div>
+                                <div class="flex items-center space-x-4 text-light/90 group-hover:text-accent transition-colors">
+                                    <i class="fas fa-map-marker-alt text-2xl text-accent"></i>
+                                    <span>Katy, Texas</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Links -->
+                        <div class="group">
+                            <h3 class="text-2xl font-bold mb-6 text-gradient">Connect With Me</h3>
+                            <div class="flex space-x-6">
+                                <a href="https://www.linkedin.com/in/advaitnair10/" 
+                                   target="_blank" 
+                                   rel="noopener noreferrer"
+                                   class="text-light/90 hover:text-accent transition-colors"
+                                >
+                                    <i class="fab fa-linkedin text-3xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="relative group" data-animate>
+                        <div class="absolute -inset-0.5 bg-gradient-to-r from-accent to-secondary rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000"></div>
+                        <form 
+                            class="relative bg-primary/80 p-8 rounded-lg backdrop-blur-sm"
+                            action="https://formsubmit.co/advaitrn1002@gmail.com" 
+                            method="POST"
+                        >
+                            <!-- Hidden fields for FormSubmit configuration -->
+                            <input type="hidden" name="_subject" value="New Portfolio Contact Form Submission">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_captcha" value="true">
+                            <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
+
+                            <div class="space-y-6">
+                                <div>
+                                    <label for="name" class="block text-light/90 mb-2">Name</label>
+                                    <input 
+                                        type="text" 
+                                        id="name" 
+                                        name="name" 
+                                        class="w-full px-4 py-2 bg-white border border-light/20 rounded-lg focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/50 transition-colors text-black"
+                                        required
+                                    >
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-light/90 mb-2">Email</label>
+                                    <input 
+                                        type="email" 
+                                        id="email" 
+                                        name="email" 
+                                        class="w-full px-4 py-2 bg-white border border-light/20 rounded-lg focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/50 transition-colors text-black"
+                                        required
+                                    >
+                                </div>
+                                <div>
+                                    <label for="message" class="block text-light/90 mb-2">Message</label>
+                                    <textarea 
+                                        id="message" 
+                                        name="message" 
+                                        rows="4" 
+                                        class="w-full px-4 py-2 bg-white border border-light/20 rounded-lg focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/50 transition-colors text-black resize-none"
+                                        required
+                                    ></textarea>
+                                </div>
+                                <button 
+                                    type="submit" 
+                                    class="w-full py-3 bg-accent text-white rounded-lg hover:bg-secondary transition-colors duration-300 font-semibold"
+                                >
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Add Particles.js for background effect -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Initialize particles
+        particlesJS('particles', {
+            particles: {
+                number: { 
+                    value: 100,  // Increased number of particles
+                    density: { 
+                        enable: true, 
+                        value_area: 800 
+                    } 
+                },
+                color: { 
+                    value: '#FF6B6B'  // Light red particles
+                },
+                shape: { 
+                    type: 'circle',
+                    stroke: {
+                        width: 1,
+                        color: '#FF8C94'
+                    }
+                },
+                opacity: { 
+                    value: 0.6,        // Increased opacity
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 1,
+                        opacity_min: 0.3,
+                        sync: false
+                    }
+                },
+                size: { 
+                    value: 4,          // Slightly larger particles
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 2,
+                        size_min: 0.3,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#FF8C94',   // Soft light red lines
+                    opacity: 0.4,       // More visible lines
+                    width: 1.5          // Slightly thicker lines
+                },
+                move: {
+                    enable: true,
+                    speed: 2.5,         // Slightly faster movement
+                    direction: 'none',
+                    random: true,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false,
+                    attract: {
+                        enable: true,
+                        rotateX: 600,
+                        rotateY: 1200
+                    }
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: 'repulse'
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: 'push'
+                    },
+                    resize: true
+                },
+                modes: {
+                    repulse: {
+                        distance: 100,
+                        duration: 0.4
+                    },
+                    push: {
+                        particles_nb: 4
+                    }
+                }
+            },
+            retina_detect: true
+        });
+
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        let isMenuOpen = false;
+
+        hamburger.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            navMenu.classList.toggle('hidden');
+            hamburger.innerHTML = isMenuOpen ? 
+                '<i class="fas fa-times"></i>' : 
+                '<i class="fas fa-bars"></i>';
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-2', 'bg-opacity-95', 'shadow-lg');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.remove('py-2', 'bg-opacity-95', 'shadow-lg');
+                header.classList.add('py-4');
+            }
+        });
+
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    if (isMenuOpen) {
+                        navMenu.classList.add('hidden');
+                        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+                        isMenuOpen = false;
+                    }
+                }
+            });
+        });
+
+        // Add animations
+        const fadeInElements = document.querySelectorAll('.animate-fadeIn');
+        fadeInElements.forEach((element, index) => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = `all 0.5s ease ${index * 0.2}s`;
+            setTimeout(() => {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }, 100);
+        });
+
+        // Modal functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const experienceCards = document.querySelectorAll('.experience-card');
+            const modals = document.querySelectorAll('[id^="modal-"]');
+
+            // Show modal
+            experienceCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const modalId = `modal-${card.dataset.modal}`;
+                    const modal = document.getElementById(modalId);
+                    if (modal) {
+                        // Remove hidden class to show modal
+                        modal.classList.remove('hidden');
+                        // Add styles to make modal visible
+                        modal.style.display = 'block';
+                        // Prevent body scrolling
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+
+            // Close modal functionality
+            modals.forEach(modal => {
+                // Close on button click
+                const closeButton = modal.querySelector('button');
+                if (closeButton) {
+                    closeButton.addEventListener('click', () => {
+                        modal.classList.add('hidden');
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    });
+                }
+
+                // Close on outside click
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        modal.classList.add('hidden');
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            });
+
+            // Close on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    modals.forEach(modal => {
+                        if (!modal.classList.contains('hidden')) {
+                            modal.classList.add('hidden');
+                            modal.style.display = 'none';
+                            document.body.style.overflow = 'auto';
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
